@@ -12,7 +12,9 @@ class RepoClient:
     def __init__(self, repo_path: str | Path) -> None:
         self.repo_path = Path(repo_path)
         if not self.repo_path.exists():
-            raise RepoClientError(f"Repository path '{self.repo_path}' does not exist")
+            raise RepoClientError(
+                f"Repository path '{self.repo_path}' does not exist"
+            )
 
     def apply_patch(self, patch_content: str) -> None:
         """Apply a raw patch to the repository.
@@ -37,4 +39,3 @@ class RepoClient:
         if not branch or not title:
             raise RepoClientError("branch and title are required to open a PR")
         return f"https://example.com/pr/{branch}"
-

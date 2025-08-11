@@ -78,4 +78,3 @@ class CopilotService:
             return self.ci_client.get_status(pr_id)
         except CIClientError as exc:
             raise RuntimeError(f"Failed to obtain status: {exc}") from exc
-

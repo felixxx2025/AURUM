@@ -15,4 +15,3 @@ class CIClient:
         if not pr_id:
             raise CIClientError("pr_id is required")
         return "unknown"
-
